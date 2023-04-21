@@ -26,36 +26,36 @@ public class DropDown {
     @Test
     void menu_list_1() {
         Select select = new Select(driver.findElement(By.id("dropdowm-menu-1")));
-        select.selectByVisibleText("SQL");
+        select.selectByVisibleText("Python");
     }
 
     @Test
     void menu_list_2() {
         Select select = new Select(driver.findElement(By.id("dropdowm-menu-2")));
-        select.selectByVisibleText("JUnit");
+        select.selectByVisibleText("TestNG");
     }
 
     @Test
     void menu_list_3() throws InterruptedException {
         Select select = new Select(driver.findElement(By.id("dropdowm-menu-3")));
-        select.selectByVisibleText("JQuery");
+        select.selectByIndex(2);
         Thread.sleep(2000);
+
     }
 
-    @Test
+    @Test(priority = 1)
     void check_box() throws InterruptedException {
-        WebElement checkbox1 = driver.findElement(By.cssSelector("input[value='option-1']"));
-        checkbox1.click();
-        WebElement uncheckbox3 = driver.findElement(By.cssSelector("input[value='option-3']"));
-        uncheckbox3.click();
-        WebElement checkbox4 = driver.findElement(By.cssSelector("input[value='option-4']"));
-        checkbox4.click();
+        WebElement checkbox2 = driver.findElement(By.cssSelector("input[value='option-2']"));
+        checkbox2.click();
+        WebElement checkbox3 = driver.findElement(By.cssSelector("input[value='option-3']"));
+        checkbox3.click();
+        checkbox3.click();
         Thread.sleep(2000);
     }
 
     @Test
     void radio_button() throws InterruptedException {
-        WebElement radio_button4 = driver.findElement(By.cssSelector("input[value='purple']"));
+        WebElement radio_button4 = driver.findElement(By.cssSelector("input[value='yellow']"));
         radio_button4.click();
         Thread.sleep(3000);
     }
